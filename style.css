@@ -25,6 +25,7 @@ main {
     width: 100%;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .card hr {
@@ -35,7 +36,8 @@ main {
 }
 
 .card {
-    width: calc(85% / 3) ;
+    width: calc(90% / 3) ;
+    margin: 20px 0;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -115,4 +117,31 @@ main {
 
 .show-description button {
     margin-top: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.add {
+    margin: 0;
+    color : white;
+    background-color: orangered;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    border: none;
+}
+
+/* formulaire */
+
+form {
+    background-color: antiquewhite;
+    padding: 25px;
+}
+
+form div {
+    margin: 20px;
 }

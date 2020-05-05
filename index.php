@@ -43,7 +43,7 @@ $logements = doRequest($bdd, $requestLogements);
     <?php endforeach; ?>
 </main>
 
-<button><a href="add_immobilier.php">Ajouter un logement</a></button>
+<button class="add"><a href="add_immobilier.php">Ajouter un logement</a></button>
 
 
 </body>

@@ -4,24 +4,20 @@
 <?php 
 
 
-// traitement photo
-
-
+//Verification image
 $imageName = "empty";
 
 if (isFilled($_FILES['img'])) {
     $image = $_FILES['img'];
-    $checkSize = checkSize($image['size'], 250);
-
-    // Access files's detail (extension, name, type,...)
+    $checkSize = checkSize($image['size'], 1800000);
     $pathinfoData = pathinfo($image['name']);
 
-    // Rename file 
+ 
     $fileName = $pathinfoData['filename'];
     $fileExtension = $pathinfoData['extension'];
 
     if (checkExtension($fileExtension) == true) {
-        $newFileName = $fileName . '-' . uniqid() . '.' . $fileExtension;
+        $newFileName = $fileName . '-' . $_SERVER['REQUEST_TIME'] . '.' . $fileExtension;
         move_uploaded_file($image['tmp_name'], __DIR__ . './assets/' . $newFileName);
 
         $imageName = $newFileName;
@@ -32,12 +28,23 @@ if (isFilled($_FILES['img'])) {
     
 } 
 
+
+// Creation adresse 
+$numero = $_POST['numero'];
+$nomVoie = $_POST['nom-voie'];
+
+$adresse = $numero . " " . $nomVoie;
+
+var_dump($adresse);
+
+
+// Envoie requête
 $requestInsert = "INSERT INTO logement (titre, adresse, ville, cp, surface, prix, photo, type_id, description) VALUES(:titre, :adresse, :ville, :cp, :surface, :prix, :photo, :type_id, :description)";
 $sendRequestInsert = $bdd->prepare($requestInsert);
 
 $sendRequestInsert->execute([
     "titre" => $_POST['titre'],
-    "adresse" => $_POST['adresse'],
+    "adresse" => $adresse,
     "ville" => $_POST['ville'],
     "cp" => intval($_POST['cp']),
     "surface" => intval($_POST['surface']),
@@ -46,8 +53,6 @@ $sendRequestInsert->execute([
     "type_id" => intval($_POST['type_logement']),
     "description" => $_POST['description']
 ]);
-
-var_dump($requestInsert);
 
 
 header("Location: index.php");
