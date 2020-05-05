@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    margin: 0 auto;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    width: calc(90% / 3) ;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.card figure {
+    width: 100%;
+}
+
+.card figure img {
+    width: 100%;
+    height: auto;
+}

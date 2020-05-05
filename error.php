@@ -6,6 +6,6 @@
     <title>Oups</title>
 </head>
 <body>
-    <p>Oups ! SI vous êtes là c'est que quelque chose ne va pas avec votre image</p>
+    <p>Oups ! SI vous êtes là c'est que quelque chose ne va pas avec votre image ou que la page demandée n'existe pas</p>
 </body>
 </html>
