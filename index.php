@@ -21,6 +21,7 @@ $logements = doRequest($bdd, $requestLogements);
     <?php foreach($logements as $logement => $details) : ?>
         <div class="card">
             <figure><img src="./assets/<?= $details['photo'] ?>" alt="photo"></figure>
+
             <header>
                 <h2><?= $details['titre'] ?></h2>
                 <p><?= $details['type'] ?></p>
@@ -29,13 +30,13 @@ $logements = doRequest($bdd, $requestLogements);
 
             <hr>
 
-            <p><?= $details['surface'] ?> m2</p>
-            <p><?= $details['prix'] ?> €</p>
-
-            <hr>
-            
-            <h3>Description</h3>
-            <p><?= $details['description'] ?></p>
+            <div class="content">
+                <p><?= $details['surface'] ?> m2</p>
+                <p><?= $details['prix'] ?> €</p>
+                
+                <h3>Description</h3>
+                <p><?= $details['description'] ?></p>
+            </div>
 
             <button><a href="show_logement.php?id=<?= $details['id_logement'] ?>">Voir le logement</a></button>
         </div>

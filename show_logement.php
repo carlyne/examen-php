@@ -25,23 +25,23 @@ if(isset($_GET['id'])) {
 <?php include('partials/head.php') ?>
 
 <body>
-    <figure><img src="./assets/<?= $logement['photo'] ?>" alt="photo"></figure>
-    <header>
-        <h2><?= $logement['titre'] ?></h2>
-        <p><?= $logement['type'] ?></p>
-        <p><?= $logement['adresse'] ?>, <?= $logement['cp'] ?>, <?= $logement['ville'] ?></p>
+    <header class="show-banner">
+        <img src="./assets/<?= $logement['photo'] ?>" alt="photo"></figure>
+        <h1><?= $logement['titre'] ?></h1>
     </header>
 
-    <hr>
+    <section class="show-presentation">
+        <p><?= $logement['type'] ?></p>
+        <p><?= $logement['adresse'] ?>, <?= $logement['cp'] ?>, <?= $logement['ville'] ?></p>
+        <p><?= $logement['surface'] ?> m2</p>
+        <p><?= $logement['prix'] ?> €</p>    
+    </section>
 
-    <p><?= $logement['surface'] ?> m2</p>
-    <p><?= $logement['prix'] ?> €</p>
+    <section class="show-description">
+        <h2>Description</h2>
+        <p><?= $logement['description'] ?></p>
+        <button><a href="index.php">Retour au catalogue</a></button>
+    </section>
 
-    <hr>
-    
-    <h3>Description</h3>
-    <p><?= $logement['description'] ?></p>
-
-    <button><a href="index.php">Retour au catalogue</a></button>
 </body>
 </html>

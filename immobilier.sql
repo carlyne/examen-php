@@ -5,13 +5,13 @@
 -- CREATE USER 'student'@'localhost' IDENTIFIED BY 'studentwf3';
 -- GRANT ALL PRIVILEGES ON immobilier.* TO 'student'@'localhost';
 
--- CREATE TABLE type_logement (
+-- CREATE TABLE IF NOT EXISTS type_logement (
 -- 	id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
 --     type VARCHAR(20),
 -- 	PRIMARY KEY(id)
 -- ) ENGINE=INNODB;
 
--- CREATE TABLE logement (
+-- CREATE TABLE IF NOT EXISTS logement (
 -- 	id_logement INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
 --     titre VARCHAR(75),
 --     adresse VARCHAR(150),
