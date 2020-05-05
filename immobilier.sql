@@ -2,8 +2,8 @@
 
 -- USE immobilier;
 
--- CREATE USER 'guest'@'localhost' IDENTIFIED BY 'guest123';
--- GRANT ALL PRIVILEGES ON immobilier.* TO 'guest'@'localhost';
+-- CREATE USER 'student'@'localhost' IDENTIFIED BY 'studentwf3';
+-- GRANT ALL PRIVILEGES ON immobilier.* TO 'student'@'localhost';
 
 -- CREATE TABLE type_logement (
 -- 	id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
@@ -16,9 +16,9 @@
 --     titre VARCHAR(75),
 --     adresse VARCHAR(150),
 --     ville VARCHAR(150),
---     cp SMALLINT,
---     surface SMALLINT,
---     prix SMALLINT,
+--     cp INT,
+--     surface INT,
+--     prix BIGINT,
 --     photo VARCHAR(150),
 --     type_id TINYINT REFERENCES type_logement(id),
 --     description VARCHAR(250),
@@ -30,6 +30,5 @@
 
 -- INSERT INTO type_logement
 -- (type) VALUES ('vente');
-
 
 
